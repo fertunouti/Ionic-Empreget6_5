@@ -1,0 +1,15 @@
+<div *ngIf="mediaRating==null" class="star-rating">
+  <ion-icon
+    *ngFor="let star of maxRatingArray; let i = index"
+    name="{{ i < currentRating ? 'star' : 'star-outline' }}"
+    (click)="selectRating(i + 1)"
+  ></ion-icon>
+</div>
+<div *ngIf="mediaRating!=null" class="star-rating">
+  <ion-icon
+    *ngFor="let star of maxRatingArray;"
+    name="{{ star -1 < mediaRating ? 'star' : 'star-outline' }}"
+    class="non-selectable-icon"
+  ></ion-icon>
+</div>
+

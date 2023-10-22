@@ -1,0 +1,7 @@
+<div *ngIf="usuarios">
+  <h2>Lista de Usuarios:</h2>
+  <ul>
+    <li *ngFor="let usuario of usuarios">{{ usuario.email }} - {{ usuario.role }}</li>
+  </ul>
+</div>
+

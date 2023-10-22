@@ -1,0 +1,9 @@
+<ul *ngFor="let prestador of prestadores?.conteudo" >
+    <ion-avatar slot="end">
+        <img alt="Silhouette of a person's head" src="{{prestador.imgUrl}}" />
+    </ion-avatar>
+</ul>
+<ion-input type="file" id="customFile" (change)="onChange($event)"></ion-input>
+<div style="margin-top: 10px"></div>
+<ion-button shape="round"  (click)="onUpload()" [disabled]="!selectedFiles">Atualize minha foto</ion-button>
+<ion-button shape="round"  (click)="onExcluirFoto()" >Delete minha foto {{prestadorId}}</ion-button>

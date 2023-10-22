@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <<div class = "header">  
+        <img src="../../assets/images/logo_empreget.png" >
+        <ion-title>Prestador</ion-title>
+    </div>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div align="center" style= "padding-top:10px; font-size:small;"> Agendamentos </div>
+    
+    <div align="center" >
+      <ion-datetime
+      value="2023-04-21T00:00:00"
+      min="2023-03-01T00:00:00"
+      max="2023-05-31T23:59:59"
+      
+    ></ion-datetime>
+
+    </div>
+    
+
+
+    
+    <div class="content">
+     <!--  Ordem de Serviço n<sup>o</sup> 40  -->
+        <table border="1">
+          <thead>
+            <th>Ordem de Serviço</th>
+            <th>Data:</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>40</td>
+              <td>21/04/2023</td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <th>Prestador:</th>
+            <th>Status da agenda:</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sueli Cavalcanti</td>
+              <td>Pré-reserva</td>
+            </tr>
+          </tbody>
+          
+            <thead>
+              <th>Cliente Solicitante:</th>
+              <th></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>nome do cliente</td>
+                <td>
+                  <ion-button shape="round" color="success" routerLink="/os-view">
+                  View
+                </ion-button>
+              </td>
+              </tr>
+            </tbody>
+       </table>
+    </div>
+        
+        
+     
+    
+</ion-content>
+      
+
+     
+
+
+<ion-footer class = "footer"> 
+  <ion-toolbar> 
+    <div>
+      <ion-grid>
+        <ion-row justify-content-center>
+            <ion-col size="auto" class="ion-text-center" style="padding: 0 5px;">
+              <img src="../../assets/images/home1.PNG"  routerLink="/tipo-user">
+              <!-- <img src="../../assets/images/chat.PNG"  routerLink="/home"> -->
+              <img src="../../assets/images/agenda.PNG" routerLink="/agendamentos-prestador">
+              <img src="../../assets/images/menu.PNG"  routerLink="/tela-inicial-prestador">
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-toolbar>
+</ion-footer>

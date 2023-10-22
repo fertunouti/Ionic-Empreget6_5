@@ -1,0 +1,31 @@
+
+ion-content{
+    margin-top: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    ion-item{
+      text-align: end;
+    }
+    
+}
+
+.avatar-user{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+p{
+    text-align: center;  
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;  
+}
+ion-card{
+    display: contents;
+}

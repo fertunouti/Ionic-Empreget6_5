@@ -1,0 +1,223 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar color="primary">
+    <ion-title>
+      Cadastro
+    </ion-title>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-buttons slot="primary">
+      <ion-button class="button-editar" routerLink="/editar">
+        Editar
+        <ion-icon slot="end" name="create"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content scroll-y="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="8">
+
+        <ion-img src="../../../../assets/images/Logo-transparente.png" alt="logo" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-subtitle class="ion-padding">
+        <b>Preencha com os dados pessoais:</b>
+      </ion-card-subtitle>
+    </ion-card-header>
+
+
+    <ion-card-content>
+      <ion-list>
+        <!-- Nome -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Nome completo:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.nome"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- rg -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">RG:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.rg"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- cpf -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">CPF:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.cpf"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- Logradouro numero  -->
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="floating">Tipo</ion-label>
+                <ion-select [(ngModel)]="prefixo">
+                  <ion-select-option value="Rua">Rua</ion-select-option>
+                  <ion-select-option value="Avenida">Avenida</ion-select-option>
+                  <ion-select-option value="Alameda">Alameda</ion-select-option>
+                  <ion-select-option value="Travessa">Travessa</ion-select-option>
+                  <ion-select-option value="Via">Via</ion-select-option>
+                  <ion-select-option value="Rodovia">Rodovia</ion-select-option>
+                  <ion-select-option value="Praça">Praça</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Logradouro:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.endereco.logradouro"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Número:</ion-label>
+                <ion-input type="number" maxlength="6" [(ngModel)]="cliente.endereco.numero"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Complemento:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.endereco.complemento"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- cep-bairro -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">CEP:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.endereco.cep"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Bairro:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.endereco.bairro"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- cidade estado pais -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Cidade:</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.endereco.cidade"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <div style="width: 150px">
+                <ion-item>
+                  <ion-label position="floating">Estado:</ion-label>
+                  <ion-input type="text" maxlength="2" [(ngModel)]="cliente.endereco.estado"></ion-input>
+                </ion-item>
+              </div>
+            </ion-col>
+            <ion-col>
+              <div style="width: 150px">
+                <ion-item>
+                  <ion-label position="floating">País:</ion-label>
+                  <ion-input type="text" maxlength="3" [(ngModel)]="cliente.endereco.pais"></ion-input>
+                </ion-item>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- Telefone -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Telefone</ion-label>
+                <ion-input type="tel" placeholder="0xx-9xxxx-xxxx" [(ngModel)]="cliente.telefone"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- email -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Email:</ion-label>
+                <ion-input type="email" [(ngModel)]="cliente.usuario.email"></ion-input>
+                <ion-note slot="helper">Entre com um e-mail válido</ion-note>
+                <ion-note slot="error">Email inválido</ion-note>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- senha -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Senha:</ion-label>
+                <ion-input type="password" [(ngModel)]="cliente.usuario.senha"></ion-input>
+                <ion-note slot="helper">No mínimo 6 caracteres</ion-note>
+                <ion-note slot="error">Senha inválida</ion-note>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- Confirma Senha -->
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating">Repita a senha:</ion-label>
+                <ion-input type="password" [(ngModel)]="senhaRepetida" name="senhaRepetida"></ion-input>
+                <ion-note slot="error">As senhas não coincidem</ion-note>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="5">
+        <ion-button size="small" fill="solid" color="primary" expand="block" routerLink="/hello"
+          (click)="onClick()">Salvar</ion-button>
+      </ion-col>
+      <ion-col size="5">
+        <ion-button size="small" fill="outline" color="primary" expand="block" (click)="onClickCancelar()">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-content>

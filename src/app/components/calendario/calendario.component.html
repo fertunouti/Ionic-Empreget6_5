@@ -1,0 +1,6 @@
+<!-- calendario.component.html -->
+<ion-datetime class="datetime-title" presentation="date" [showDefaultTitle]="true" [highlightedDates]="highlightedDates"
+    [(ngModel)]="selectedDate"
+    (ionChange)="onDateSelected($event)">
+    <span slot="title">Selecione uma data de Reserva</span>
+</ion-datetime>

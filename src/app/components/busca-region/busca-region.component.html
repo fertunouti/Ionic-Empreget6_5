@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-item>
+    <ion-select aria-label="Alert Interface" placeholder="Região"
+    (ionChange)="onEscolheRegiao($event)"
+    (ionCancel)="pushLog('ionCancel fired')"
+    (ionDismiss)="pushLog('ionDismiss fired')"
+    >
+      <ion-select-option value="CENTRO">Centro</ion-select-option>
+      <ion-select-option value="NORTE">Norte</ion-select-option>
+      <ion-select-option value="SUL">Sul</ion-select-option>
+      <ion-select-option value="LESTE">Leste</ion-select-option>
+      <ion-select-option value="OESTE">Oeste</ion-select-option>
+     
+    </ion-select>
+  </ion-item>
+</ion-list>

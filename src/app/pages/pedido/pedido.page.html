@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    <ion-img src="../../../../assets/images/Logo-transparente.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-title>{{perfilPrestador?.nome}}</ion-card-title>
+  <div *ngFor="let cliente of perfilCliente">
+    <ion-card-content>
+      <p><ion-label>Serviços: {{perfilPrestador?.servico.descricao}}</ion-label> </p>
+      <p><ion-label>Valor: R$ {{perfilPrestador?.servico.valor | number: "1.2-2"}}</ion-label> </p>
+      <p><ion-label>Observação: {{perfilPrestador?.observacao}} {{perfilPrestador?.descricao}}</ion-label> </p>
+  </ion-card-content>
+  </div>
+</ion-card>
+
+  <ion-content>
+    <ion-label>Local do serviço:</ion-label>
+    <div *ngFor="let cliente of perfilCliente">
+      <p>{{cliente?.endereco.logradouro}}, {{cliente?.endereco.numero}}, {{cliente?.endereco.bairro}}</p>
+      <p>{{cliente?.endereco.cidade}}, {{cliente?.endereco.estado}}</p>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label>Tipo de Diária:</ion-label>
+          <ion-select [(ngModel)]="osPedido.tipoDeDiaria" placeholder="ESCOLHA A DIÁRIA">
+            <ion-select-option value="DIARIA_CHEIA">Diária cheia</ion-select-option>
+            <ion-select-option value="MEIA_DIARIA">Meia diária</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col>
+          <ion-label>Período:</ion-label>
+          <ion-select [(ngModel)]="osPedido.periodo" placeholder="ESCOLHA O PERÍODO">
+            <ion-select-option value="MATUTINO">Matutino</ion-select-option>
+            <ion-select-option value="VESPERTINO">Vespertino</ion-select-option>
+            <ion-select-option value="COMERCIAL">Horário comercial</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-row class="calendario-row">
+        <calendario  (dateSelected)="onDateSelected($event)"></calendario>
+      </ion-row>
+      <div class="button-row">
+        <ion-col>
+          <ion-button fill="solid" color="primary" expand="block" routerLink="/historico-agendamentos"
+            (click)="onClick()">Agendar</ion-button>
+        </ion-col>
+        <ion-col >
+          <ion-button fill="outline" color="primary" expand="block" routerLink="/perfil-prestador">Cancelar</ion-button>
+        </ion-col>
+      </div>
+    </ion-grid>
+  </ion-content>
+

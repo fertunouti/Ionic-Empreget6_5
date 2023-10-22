@@ -1,0 +1,41 @@
+<ion-content>
+
+  <ion-card-content class="card">
+    <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
+      <img src="../../../../assets/images/Logo-transparente.png">
+    </div>
+
+    <div class="ion-text-wrap">
+      <h4>Redefinir senha</h4>
+    </div>
+
+    <ion-card-content>
+      <ion-item fill="outline" style=" margin-bottom: 10px;">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label>Nova senha: </ion-label>
+        <ion-input type="email"></ion-input>
+        <ion-note slot="error">E-mail inválido</ion-note>                 
+      </ion-item>
+
+      <ion-item fill="outline" style=" margin-bottom: 10px;">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label>Repetir senha: </ion-label>
+        <ion-input type="password"></ion-input>                 
+        <ion-note slot="error">Senha inválida</ion-note>
+      </ion-item>
+    </ion-card-content>
+
+    <br><br>
+    <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="8">
+            <ion-button size="small" fill="solid" color="primary" expand="block" routerLink="/login">Salvar</ion-button>
+          </ion-col>
+        <!--   <ion-col size="6">
+            <ion-button size="small" fill="outline" color="primary" expand="block" routerLink="/login">voltar</ion-button>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+
+  </ion-card-content>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-content fullscreen="true">
+  <ion-card>
+
+    <ion-grid style="margin: 100px;">
+      <ion-img src="../../../../assets/images/Logo-transparente.png" alt="logo"> </ion-img>
+      <div class="avatar-user">
+      </div>
+    </ion-grid>
+
+    <p>Escolha o ambiente que deseja se cadastrar?</p>
+    <br>
+    <br>
+
+    <ion-chip color="tertiary"  routerLink="/cadastro" (click)="onClickCliente()">
+      <ion-avatar>
+        <img src="../../../../assets/icon/icon-cliente.png" alt="icon-cliente"/>
+      </ion-avatar>
+      <ion-label>sou Cliente</ion-label>
+    </ion-chip>
+
+    <ion-chip color="tertiary" routerLink="/cadastro-prestador" (click)="onClickPrestador()">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="../../../../assets/icon/icon-prestador.png" alt="icon-prestador"/>
+      </ion-avatar>
+      <ion-label>sou Prestador</ion-label>
+    </ion-chip>
+    <br>
+    <br>
+  
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <ion-button size="small" fill="outline" color="primary" expand="block"
+            routerLink="/hello">Voltar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <!--  <div>
+      <h4>Cliente</h4>
+    </div>
+
+    <div class="avatar-user">
+      <ion-avatar slot="end">
+        <img src="../../../../assets/icon/icon-cliente.png" alt="icon-cliente" routerLink="/home" />
+      </ion-avatar>
+    </div>
+
+    <div>
+      <h4>Prestador</h4>
+    </div>
+
+    <div class="avatar-user">
+      <ion-avatar slot="end">
+        <img alt="Silhouette of a person's head" src="../../../../assets/icon/icon-prestador.png" alt="icon-prestador"
+          routerLink="#" />
+      </ion-avatar>
+    </div> -->
+
+  </ion-card>
+
+</ion-content>

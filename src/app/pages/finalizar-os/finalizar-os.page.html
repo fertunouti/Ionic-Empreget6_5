@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png">
+      <ion-title>{{tipoUser}}</ion-title>
+    </div>
+    <ion-menu-button slot="start"></ion-menu-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br><br><br>
+    <div align="center" class="texto_titulo" > Ordem de Serviço n<sup>o</sup> {{idPedido}} </div>
+  
+    <br><br>
+    <div>
+      <ion-grid>
+        <ion-row justify-content-center>
+          
+          <ion-col  class="justify-content-center">
+            
+            <ion-button (click)="onClickFinalizarOS()" shape=round fill="outline" color=danger class="custom-button">Finalizar OS</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+</ion-content>
+      
+
+     
+
+
+<ion-footer class = "footer"> 
+ 
+</ion-footer>

@@ -1,0 +1,11 @@
+.star-rating {
+    ion-icon {
+      font-size: 24px;
+      color: gold; /* ou a cor desejada para as estrelas preenchidas */
+      cursor: pointer;
+    }
+  }
+  .non-selectable-icon {
+    user-select: none;
+  }
+  

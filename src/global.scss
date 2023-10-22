@@ -1,0 +1,72 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+  --ion-color-primary: #7210ff;
+  --ion-color-primary-rgb: 114, 16, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #660ee6;
+  --ion-color-primary-tint: #802fff;
+
+  --ion-text-color: #7210ff;
+  --ion-text-color-rgb: 114, 16, 255;
+
+  --ion-color-step-50: #f4eaff;
+  --ion-color-step-100: #e8d5ff;
+  --ion-color-step-150: #dac0ff;
+  --ion-color-step-200: #cdbaff;
+  --ion-color-step-250: #bfabff;
+  --ion-color-step-300: #b29fff;
+  --ion-color-step-350: #a091ff;
+  --ion-color-step-400: #9384ff;
+  --ion-color-step-450: #8376ff;
+  --ion-color-step-500: #7268ff;
+  --ion-color-step-550: #6159ff;
+  --ion-color-step-600: #574ff2;
+  --ion-color-step-650: #4d45e6;
+  --ion-color-step-700: #433bdb;
+  --ion-color-step-750: #3932cf;
+  --ion-color-step-800: #2f28c3;
+  --ion-color-step-850: #251eba;
+  --ion-color-step-900: #1b14ae;
+  --ion-color-step-950: #110aa2;
+}
+
+ion-datetime {
+  --background: var(--ion-color-step-50);
+  --background-rgb: 244, 234, 255;
+
+  border-radius: 16px;
+  box-shadow: rgba(var(--ion-color-primary-rgb), 0.3) 0px 10px 15px -3px;
+
+  /* Aplica uma escala de 0.5 para reduzir o tamanho do calendário */
+  transform: scale(0.8);
+  transform-origin: top center;
+
+  
+}

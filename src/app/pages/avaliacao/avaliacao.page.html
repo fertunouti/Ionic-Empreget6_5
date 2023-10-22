@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start" color="primary"></ion-menu-button>
+    <ion-img src="../../../../assets/images/Logo-transparente.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">avaliacao</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<br><br>
+
+  
+<ion-card>
+  <div align="center" style="padding-top:20px; font-size:large;"> Ordem de Serviço n<sup>o</sup> {{idPedido}} </div>
+  <br>
+  <div align="center" style="padding-top:20px; font-size:large;"> Avaliação </div>
+
+  <ion-card-content>
+
+
+  
+  <ion-list>
+    <!-- Nome -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div> Prestador:  {{pedido?.nomePrestador}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+      <app-star-rating (ratingChange)="mudouAvaliacao($event)"></app-star-rating> 
+      </ion-col>
+      <ion-col>
+        <div> Nota: {{valorAvaliacao}} </div>
+      </ion-col>
+      </ion-row>
+      
+      <br><br>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label >Comentário:</ion-label>
+            <ion-input type="text" [(ngModel)]="avaliacao.comentario" placeholder="Escreva um comentário"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  </ion-card-content>
+  </ion-card>
+
+  
+ <ion-button shape="round" color="primary" (click)="onClickAvaliacao()">
+           AVALIAR
+          </ion-button>
+ <ion-button shape="round" color="primary" (click)="onClickInicio()">
+           Ir para Home
+          </ion-button>
+</ion-content>

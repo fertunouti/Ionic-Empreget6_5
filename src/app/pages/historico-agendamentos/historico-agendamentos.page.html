@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png"><ion-title>{{tipoUser}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ul *ngFor="let pedido of pedidos?.conteudo">
+    <ion-item>
+      <ion-label fill="clear">
+        <div class="texto_titulo"> Pedido nº {{pedido?.id}} </div>
+
+        <div *ngIf="tipoUser=='CLIENTE'">
+          <p class="texto">Prestador:</p>
+          <p> {{pedido?.nomePrestador}}</p>
+        </div>
+        <div *ngIf="tipoUser=='PRESTADOR'">
+          <p class="texto">Cliente:<p>
+            <p>{{pedido?.nomeCliente}}</p>
+        </div>
+        <p class="texto">Data: {{pedido?.dataServico}}</p>
+        <p>{{pedido?.statusOrdemServico }}</p>
+
+      </ion-label>
+      <ion-col>
+        <ion-label>
+          <ion-button fill="clear" routerLink="/os-view" (click)="onClick(pedido?.id)">+Info</ion-button>
+
+        </ion-label>
+      </ion-col>
+    </ion-item>
+  </ul>
+  <div>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col style="padding: 20px 20px;">
+          <ion-button shape="round" fill="outline" (click)="onClickInicio()" class="custom-button">
+            Ir para Home
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<app-paginacao [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="changePage($event)"></app-paginacao>

@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png"><ion-title>{{tipoUser}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="4">
+        <!-- <ion-img src="assets/images/{{nomeFotoPerfil}}"></ion-img> -->
+        <ion-img class="imgPerfil" src="{{urlFotoPerfil}}"></ion-img>
+         
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card class="card">
+    <ion-card-header color="medium">
+      <h5>{{perfilPrestador?.nome}}</h5>
+    </ion-card-header>
+    <ion-list>   
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            Nome: <p>{{perfilPrestador?.nome}} </p>
+          </ion-col>
+          <ion-col size="auto">
+           <div style="width: 150px">Região de residência: <p>{{perfilPrestador?.regiao}} </p>
+          </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Disponibilidade de horário: <p>{{perfilPrestador?.disponibilidade}}</p></ion-col>
+          <ion-col size="auto">
+            <div style="width: 150px">Cidade: <p>{{perfilPrestador?.endereco.cidade}}</p> </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Valor da diária: <p>{{perfilPrestador?.servico.valor.toFixed(2)}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="auto">Descrição do serviço: <p>{{perfilPrestador?.servico.descricao}}</p> 
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="auto"> Observação: <p>{{perfilPrestador?.observacao}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="auto"> Avaliação: <div class="stars"><app-star-rating [mediaRating]="mediaAvaliacao"></app-star-rating></div>
+                  </ion-col>
+                  <ion-col><div> {{mediaAvaliacao | number : "1.1-1"}}/5</div></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ion-card>
+  
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="6">
+        <ion-button shape="round" fill="outline" class="custom-button" expand="block" routerLink="/pedido" (click)="onClickAgendar()">Agendar</ion-button>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+  <div>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col style="padding: 20px 20px;">
+          <ion-button shape="round" fill="outline" class="custom-button" expand="block" routerLink="/pedido" routerLink="/hello">
+           Ir para Home
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+</ion-content>

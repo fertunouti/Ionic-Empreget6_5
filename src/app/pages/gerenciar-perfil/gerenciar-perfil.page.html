@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <div class = "header">  
+      <img src="../../assets/images/logo_empreget.png" >
+      <ion-title>Prestador</ion-title>
+    </div>
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content >
+  
+  <p>   </p>
+  
+
+
+  <ion-grid >
+    <div>
+      <img src="../../assets/images/pessoa.PNG" >
+      <ion-title></ion-title>
+     <p align="center">Nome</p> 
+    </div>
+    <ion-row justify-content-center>
+        <ion-col>          
+          <ion-button  fill="outline" class="custom-button">
+            <ion-icon slot="start" name="person-outline" routerLink =""></ion-icon>
+            <div >Alterar perfil</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button fill="outline" class="custom-button"routerLink ="">
+            <ion-icon slot="start" name="heart-outline" ></ion-icon>
+            <div >Favoritos</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button fill="outline" class="custom-button"routerLink ="">
+            <ion-icon slot="start" name="settings-outline" ></ion-icon>
+            <div >Ordem de serviço</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button  fill="outline" class="custom-button"routerLink ="">
+            <ion-icon slot="start" name="location-outline" ></ion-icon>
+            <div >Meu endereço</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button  fill="outline" class="custom-button"routerLink ="">
+            <ion-icon slot="start" name="help-circle-outline" ></ion-icon>
+            <div >Ajuda</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button  fill="outline" class="custom-button"routerLink ="">
+            <ion-icon slot="start" name="phone-portrait-outline" ></ion-icon>
+            <div >Sobre o App</div>
+            <ion-icon slot="end" name="chevron-forward-outline" ></ion-icon>
+          </ion-button>
+          <ion-button  fill="outline" class="custom-button"routerLink ="/home">
+            <ion-icon slot="start" name="exit-outline" ></ion-icon>
+            <div >Sair</div>
+            
+          </ion-button>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+
+<ion-footer class = "footer"> 
+  <ion-toolbar> 
+    <div>
+      <ion-grid>
+        <ion-row justify-content-center>
+            <ion-col  style="padding: 0 10px;">
+              
+              <img src="../../assets/images/home1.PNG"  routerLink="/tipo-user">
+              <img src="../../assets/images/chat.PNG"  routerLink="/home">
+              <img src="../../assets/images/agenda.PNG" routerLink="/agendamentos-prestador">
+              <img src="../../assets/images/menu.PNG"  routerLink="/tela-inicial-prestador">
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-toolbar>
+</ion-footer> 

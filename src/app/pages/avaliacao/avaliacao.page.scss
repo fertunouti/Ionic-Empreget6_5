@@ -1,0 +1,51 @@
+ion-content{
+    font-family: 'inter', sans-serif;
+    font-size: 17px;
+  }
+  ion-img{
+    padding-left: 30%;
+    width
+    : 60%;
+    
+  }
+  .Capa{
+    justify-content: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5%;
+  
+  }
+  .ion-text-wrap{
+    text-align: center;
+    margin: 20px 20px;
+    font-family: 'inter', sans-serif;
+    font-style: italic;
+  }
+  
+  .ion-header-search{
+    margin: 20px 20px;
+    text-align: initial;
+  }
+  .text1{
+    justify-content: center;
+    margin-top: 10%;
+    text-align: center;
+    margin: 20px 20px;
+    padding-bottom: 3%;
+    height: 100%;
+    font-family: 'inter', sans-serif;
+    font-style: italic;
+  }
+  
+  ion-list{
+    ion-item{
+        ion-col{
+            .coluna-view{
+                display: flex;
+                justify-content: end;
+            }
+        }
+    }
+  }
+  

@@ -1,0 +1,40 @@
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png"><ion-title>{{tipoUser}}</ion-title>
+    </div>    
+  </ion-toolbar>
+  </ion-header>
+
+<div class="ion-text-wrap">
+  <div *ngFor="let cliente of clientes">
+    <h3>{{cliente?.nome}}</h3>
+    </div>
+  <p>Bem vindo ao app de serviço de limpeza mais amado do Brasil</p>
+</div>
+ 
+
+  <ion-header>
+    <div class="Capa">
+
+     
+      <br>
+
+
+      <img src="../../../../assets/images/home.png">
+    </div>
+        
+  </ion-header >
+   <br><br><br>
+  
+    <ion-button  shape="round" fill="outline" class="custom-button" routerLink="/historico-agendamentos">Meus Pedidos</ion-button> 
+    <ion-button  shape="round" fill="outline" class="custom-button" routerLink="/pesquisa-prestador">Busque Prestadores</ion-button> 
+  
+    <ion-button  shape="round" fill="outline" class="custom-button" routerLink="/editar" (click)="onClickAtualizarCliente()">Meu Perfil</ion-button> 
+  
+
+
+
+

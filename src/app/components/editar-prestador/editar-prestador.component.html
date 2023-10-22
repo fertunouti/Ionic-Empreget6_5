@@ -1,0 +1,208 @@
+<ion-card color="light">
+  <ion-row class="ion-justify-content-center">
+          <ion-col size="flex">
+ <div class = "imgPerfil"><img  alt="Foto Perfil" src={{imgUrl}} /></div>
+ </ion-col>
+ </ion-row>
+ <ion-row class="ion-justify-content-center">
+  <ion-col size="flex"  >
+    <ion-button shape="round" fill="outline" routerLink="/gerenciar-foto" class="custom-button" >
+      Atualizar Minha Foto
+    </ion-button>
+  </ion-col>
+</ion-row>
+  <ion-card-header>
+    
+    <ion-card-title class="ion-padding">
+      <b>Meus dados:</b>
+    </ion-card-title>
+    <ion-label>
+      <p>Ultima atualização:{{dataAtualizacao}} </p>
+    </ion-label>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+
+      <!-- Nome -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Nome completo:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.nome" (keyup)="onMudouNome($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- rg -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">RG:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.rg" (keyup)="onMudouRG($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- cpf -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">CPF:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.cpf" (keyup)="onMudouCPF($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Logradouro numero  -->
+
+      <ion-row>
+
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Logradouro:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.endereco?.logradouro" (keyup)="onMudoulogradouro($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Número:</ion-label>
+            <ion-input type="number" maxlength="6" [ngModel]="prestador?.endereco?.numero" (keyup)="onMudouNumero($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Complemento:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.endereco?.complemento" (keyup)="onMudouComplemento($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- cep-bairro -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">CEP:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.endereco?.cep" (keyup)="onMudouCep($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Bairro:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.endereco?.bairro" (keyup)="onMudouBairro($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- cidade estado pais -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Cidade:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.endereco?.cidade" (keyup)="onMudouCidade($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div style="width: 150px">
+            <ion-item>
+              <ion-label position="floating" class="texto">Estado:</ion-label>
+              <ion-input type="text" maxlength="2" [ngModel]="prestador?.endereco?.estado" (keyup)="onMudouEstado($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div style="width: 150px">
+            <ion-item>
+              <ion-label position="floating" class="texto">País:</ion-label>
+              <ion-input type="text" maxlength="3" [ngModel]="prestador?.endereco?.pais" (keyup)="onMudouPais($event)"></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!-- Telefone -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Telefone</ion-label>
+            <ion-input type="tel" placeholder="0xx-9xxxx-xxxx" [ngModel]="prestador?.telefone" (keyup)="onMudouTelefone($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Serviço / Descrição-->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Serviço:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.servico?.descricao" (keyup)="onMudouDescricao($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Serviço/ Valor-->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Valor (R$):</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.servico?.valor" (keyup)="onMudouValor($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Observação do Prestador -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Escreva alguma observação:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.observacao" (keyup)="onMudouObservacao($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Logradouro numero  -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Atende Região:</ion-label>
+            <ion-select [ngModel]="prestador?.regiao" (keyup)="onMudouRegiao($event)">
+              <ion-select-option value="CENTRO">Centro</ion-select-option>
+              <ion-select-option value="NORTE">Norte</ion-select-option>
+              <ion-select-option value="SUL">Sul</ion-select-option>
+              <ion-select-option value="LESTE">Leste</ion-select-option>
+              <ion-select-option value="OESTE">Oeste</ion-select-option>
+              
+
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <!-- Disponibilidade de tempo -->
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating" class="texto">Disponibilidade:</ion-label>
+            <ion-input type="text" [ngModel]="prestador?.disponibilidade" (keyup)="onMudouDisponibilidade($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </ion-card-content>
+
+</ion-card>

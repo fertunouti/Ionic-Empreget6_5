@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png"><ion-title>{{tipoUser}}</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<div class="imgPrestador">
+  <img src="../../assets/images/prestador.PNG">
+</div>
+
+<div align="center" style="padding-top:10px; font-size:medium;">
+  <p> Olá prestador! </p>
+  <div *ngFor="let prestador of prestadores?.conteudo">
+    <h3>{{ prestador?.nome}}</h3>
+  </div>
+  <p> Bem vindo ao app de serviços</p>
+  <p> de limpeza mais amado do Brasil</p>
+</div>
+
+<ion-grid>
+  <ion-row class="justify-content-center">
+    <ion-col size="auto">
+      <ion-button shape="round" fill="outline" routerLink="/historico-agendamentos" class="custom-button">
+        Administrar Minha Agenda
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="justify-content-center">
+    <ion-col size="auto">
+      <ion-button shape="round" fill="outline" routerLink="/gerenciar-foto" class="custom-button"
+        (click)="onClickAtualizarFoto()">
+        Atualizar Minha Foto
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="justify-content-center">
+    <ion-col size="auto">
+      <ion-button shape="round" fill="outline" routerLink="/editar" class="custom-button"
+        (click)="onClickAtualizarPrestador()">
+        Atualizar Meus Dados
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

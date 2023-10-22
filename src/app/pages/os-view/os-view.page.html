@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-toolbar>
+
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png">
+      <ion-title>{{tipoUser}}</ion-title>
+    </div>
+    <ion-menu-button slot="start"></ion-menu-button>
+
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content>
+  <div align="center" style="padding-top:20px; font-size:large;"> Ordem de Serviço n<sup>o</sup> {{idPedido}} </div>
+  <br><br>
+  <ion-item>
+   
+    <ion-label fill="clear">
+      <ion-grid>
+        <ion-row class="ion-align-items-start"> 
+          <div *ngIf="tipoUser=='CLIENTE'">
+            <ion-col>
+              <p class="texto ion-text-left">Prestador:</p>
+              <div style="font-weight: bold; font-size: medium;" class="ion-text-left">{{pedido?.nomePrestador}}</div>
+            </ion-col>
+          </div>
+          <div *ngIf="tipoUser=='PRESTADOR'">
+            <ion-col>
+              <p class="texto ion-text-left">Cliente:</p>
+              <div style="font-weight: bold; font-size: medium;" class="ion-text-left">{{pedido?.nomeCliente}}</div>
+            </ion-col>
+          </div>
+          <ion-col>
+            <p class="texto ion-text-left">Data agendada:</p>
+            <p class="ion-text-left">{{pedido?.dataServico}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <br>
+      <p class="texto">Endereço do Serviço: </p>
+      <p>{{pedido?.localDoServico.logradouro}},
+        {{pedido?.localDoServico.numero}},
+        {{pedido?.localDoServico.complemento}}</p>
+      <p>{{pedido?.localDoServico.bairro}}</p>
+      <p>{{pedido?.localDoServico.cidade}}-
+        {{pedido?.localDoServico.estado}}</p>
+      <p class="texto">Período solicitado: </p>
+      <p>{{pedido?.periodo}}/{{pedido?.tipoDeDiaria}}</p>
+      <br>
+      <p class="texto">Serviço contratado:</p>
+      <p> {{pedido?.servico.descricao}}</p>
+      <br>
+      <p class="texto">Valor contratado:</p>
+      <p>R$ {{pedido?.servico.valor | number: '1.2-2'}}</p>
+      <br><br>
+      <p class="texto">Status da O.S.</p>
+      <div style="font-weight: bold; font-size: medium;">{{pedido?.statusOrdemServico }}</div>
+      <br>
+      <div *ngIf="pedido?.statusOrdemServico !== 'CANCELADO'&&pedido?.statusOrdemServico !== 'RECUSADO'&&pedido?.statusOrdemServico !== 'AGUARDANDO_ACEITE'&&pedido?.statusOrdemServico !== 'PENDENTE'" class="texto"><p>Avaliação recebida</p></div>
+      <div *ngIf="estrelas==null && pedido?.statusOrdemServico === 'FINALIZADO'" >SEM AVALIAÇÃO</div>
+      <div *ngIf="estrelas!=null && pedido?.statusOrdemServico === 'FINALIZADO'" ><div class="texto">Nota:</div> {{estrelas| number: "1.1-2"}}</div>
+      <div *ngIf="comentarios && pedido?.statusOrdemServico === 'FINALIZADO'" ><div class="texto">Comentários:</div> {{comentarios}}</div>
+
+      <p *ngIf="pedido?.dataDaFinalizacao" class="texto">Atualizado em: {{dataDaFinalizacao}}</p>
+      <p *ngIf="!pedido?.dataDaFinalizacao" class="texto">Atualizado em: {{dataDaSolicitacao}}</p>
+      
+      
+    </ion-label>
+
+  </ion-item>
+
+
+
+  <div *ngIf="tipoUser=='CLIENTE'">
+    <ion-grid>
+      <ion-row class="justify-content-center">
+        <ion-col style="padding: 20px 10px;">
+          <div *ngIf="pedido?.statusOrdemServico !== 'CANCELADO' &&
+              pedido?.statusOrdemServico !== 'PENDENTE' && 
+              pedido?.statusOrdemServico !== 'RECUSADO' && 
+              pedido?.statusOrdemServico !== 'FINALIZADO'">
+            <ion-button shape="round" fill="outline" color="danger" class="custom-button" (click)="onClickCancelarOS()">
+              Cancelar OS
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 20px 10px;">
+          <div *ngIf="pedido?.statusOrdemServico == 'FINALIZADO'&& avaliacao === undefined">
+            <ion-button shape="round" fill="outline" class="custom-button" (click)="onClickAvaliarOS(pedido?.id)" routerLink="/avaliacao">
+              Avaliar Prestador
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col style="padding: 20px 10px;">
+          <ion-button shape="round" fill="outline" custom="custom-button" (click)="onClickVoltar()" >
+            Voltar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <!-- ****BOTOES PARA O PRESTADOR  *** -->
+  <div *ngIf="tipoUser=='PRESTADOR'">
+    <ion-grid>
+      <ion-row >
+        <ion-col  class="justify-content-center">
+          <div *ngIf="pedido?.statusOrdemServico !== 'CANCELADO' &&
+           pedido?.statusOrdemServico !== 'PENDENTE' &&
+           pedido?.statusOrdemServico !== 'RECUSADO'&& 
+           pedido?.statusOrdemServico !== 'FINALIZADO'
+           ">
+            <ion-button shape="round" fill="outline" color="success" class="custom-button" (click)="onClickAceitarOS()">
+              Aceitar
+            </ion-button>
+          </div>
+          <div *ngIf="pedido?.statusOrdemServico !== 'CANCELADO' &&
+          pedido?.statusOrdemServico !== 'PENDENTE' &&
+          pedido?.statusOrdemServico !== 'RECUSADO' && 
+          pedido?.statusOrdemServico !== 'FINALIZADO'
+          ">
+           <ion-button shape="round" fill="outline" color="warning" class="custom-button" (click)="onClickRecusarOS()">
+             Recusar OS
+           </ion-button>
+         </div>
+         <div *ngIf="pedido?.statusOrdemServico !== 'CANCELADO' && pedido?.statusOrdemServico !== 'AGUARDANDO_ACEITE'&& 
+         pedido?.statusOrdemServico !== 'FINALIZADO'">
+           <div *ngIf="pedido?.statusOrdemServico === 'PENDENTE'">
+             <ion-button shape="round" fill="outline" color="success" class="custom-button" routerLink="/finalizar-os">
+               Finalizar OS
+             </ion-button>
+           </div>
+         
+         </div>
+         <div>
+          <ion-button shape="round" fill="outline" color="primary" class="custom-button" (click)="onClickVoltar()" routerLink="/historico-agendamentos">
+            Voltar
+          </ion-button>
+          </div>
+        </ion-col>
+
+        <!-- <ion-col style="padding: 20px 10px;"> </ion-col> -->
+        
+        <!-- <ion-col style="padding: 20px 10px;"> </ion-col> -->
+        <!-- <ion-col style="padding: 20px 10px;"> </ion-col> -->
+      
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

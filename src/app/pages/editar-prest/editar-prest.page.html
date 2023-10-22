@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <div class="header"><img src="../../../../assets/images/logo_empreget.png"><ion-title>{{tipoUser}}</ion-title>
+    </div>    
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content scroll-y="true">
+  <app-editar-prestador></app-editar-prestador>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+        <ion-button shape="round" fill="outline" class="custom-button" 
+          (click)="onClickSalvar()">Salvar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  shape="round"  fill="outline" class="custom-button"
+          (click)="onClickCancelar()">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

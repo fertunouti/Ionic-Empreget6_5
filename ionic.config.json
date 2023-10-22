@@ -1,0 +1,7 @@
+{
+  "name": "empreget3",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

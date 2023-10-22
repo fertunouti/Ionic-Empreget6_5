@@ -1,0 +1,43 @@
+// .fundo-loading{
+//     position: absolute;
+//     padding-top: 55%;
+//     padding-left: 22%;
+//     max-width: 100%;
+//     background-color: red; /* Adicione esta linha para definir o fundo vermelho */
+
+// }
+.fundo-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #7210FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Logo{
+//    position: absolute;
+//    height: 30%;
+//    padding-top: 60%;
+//    padding-left: 26%;
+//    max-width: 100%; 
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    height: 30%;
+    text-align: center;
+   
+}
+
+.Logo img {
+    display: block; /* Isso garante que a imagem se comporte como um bloco, permitindo o alinhamento horizontal */
+    margin: 0 auto; /* Isso centraliza a imagem horizontalmente */
+}

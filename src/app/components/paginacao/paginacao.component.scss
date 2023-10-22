@@ -1,0 +1,12 @@
+ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    ion-title {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
